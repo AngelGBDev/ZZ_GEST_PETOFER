@@ -1,0 +1,72 @@
+<mvc:View controllerName="ZZ_GEST_PETOFER.controller.Home" xmlns:l="sap.ui.layout" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
+	xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns:t="sap.ui.table"
+	xmlns:smartFilterBar="sap.ui.comp.smartfilterbar" xmlns:smartTable="sap.ui.comp.smarttable" xmlns:f="sap.f" xmlns:fb="sap.ui.comp.filterbar"
+	xmlns:vizData="sap.viz.ui5.data" xmlns:grid="sap.ui.layout.cssgrid" xmlns:core="sap.ui.core">
+	<Shell>
+		<App id="idAppControl">
+			<pages>
+				<Page title="Gestión de Solicitudes de Oferta" titleAlignment="Start">
+					<headerContent>
+						<!-- <f:Avatar src="" initials="" displayShape="Circle" displaySize="XS" imageFitType="Contain" press="onAvatarPress" /> 
+						<Text class="StyleText" text="{localmodel>/perfilUser/nombreCompleto}" width="120px" maxLines="3" wrapping="true" textAlign="Begin" textDirection="Inherit"
+							visible="true"/> -->
+						<!-- <Button id="iframe" icon="sap-icon://customer" text="{i18n>userCard}" tooltip="{i18n>userCard}" press="iFrame"/> -->
+					</headerContent>
+					<f:DynamicPage id="dynamicPageId" preserveHeaderStateOnScroll="true" headerExpanded="true">
+						<!-- DynamicPage Title -->
+						<f:header>
+							<f:DynamicPageHeader pinnable="true">
+								<f:content>
+									<smartFilterBar:SmartFilterBar id="smartFilterBar" persistencyKey="UniqueAndStablePersistencyKey" considerSelectionVariants="true"
+										entitySet="BusinessPartnerSet" showClearButton="true" useToolbar="false">
+										<smartFilterBar:controlConfiguration>
+											<smartFilterBar:ControlConfiguration index="1" key="BusinessPartnerID" visibleInAdvancedArea="true"/>
+											<smartFilterBar:ControlConfiguration index="2" key="CompanyName" visibleInAdvancedArea="true"/>
+											<smartFilterBar:ControlConfiguration index="3" key="WebAddress" visibleInAdvancedArea="true"/>
+											<smartFilterBar:ControlConfiguration index="4" key="EmailAddress" visibleInAdvancedArea="true"/>
+										</smartFilterBar:controlConfiguration>
+									</smartFilterBar:SmartFilterBar>
+								</f:content>
+							</f:DynamicPageHeader>
+						</f:header>
+						<f:content>
+							<VBox>
+								<f:GridList >
+									<f:GridListItem>
+										<f:layoutData>
+											<grid:ResponsiveColumnItemLayoutData columns="12" rows="2"/>
+										</f:layoutData>
+										<smartTable:SmartTable id="LineItemsSmartTable" entitySet="BusinessPartnerSet"
+											initiallyVisibleFields="BusinessPartnerID,CompanyName,WebAddress,EmailAddress" smartFilterId="smartFilterBar" tableType="ResponsiveTable"
+											useExportToExcel="true" beforeExport="onBeforeExport" useVariantManagement="false" useTablePersonalisation="true"
+											header="Peticiones de oferta" showRowCount="true" persistencyKey="UniqueAndStablePersistencyKey" enableAutoBinding="true"
+											class="sapUiResponsiveContentPadding" initialNoDataText="No se encontraron datos para mostar" beforeRebindTable="BeforeRebindTableRegistro"
+											dataReceived="onDataReceivedRegistro">
+											<smartTable:customToolbar>
+												<OverflowToolbar>
+													<ToolbarSpacer/>
+													<Button id="idBtnCrearEquipo" type="Transparent" text="Copiar" press="dlgColpiEquipo"/>
+													<Button id="idEliminarEquipo" type="Transparent" text="Eliminar" press="onEliminarEquipo"/>
+													<Button id="idBtnEditarEquipo" type="Transparent" text="Crear" press="dlgAgregarrEquipo"/>
+												</OverflowToolbar>
+											</smartTable:customToolbar>
+											<t:Table rowActionCount="1" selectionMode="Single">
+												<t:rowActionTemplate>
+													<t:RowAction>
+														<t:items>
+															<t:RowActionItem type="Navigation" press="onItemPress" visible="true"></t:RowActionItem>
+														</t:items>
+													</t:RowAction>
+												</t:rowActionTemplate>
+											</t:Table>
+										</smartTable:SmartTable>
+									</f:GridListItem>
+								</f:GridList>
+							</VBox>
+						</f:content>
+					</f:DynamicPage>
+				</Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>

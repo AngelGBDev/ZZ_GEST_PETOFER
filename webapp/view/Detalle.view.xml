@@ -1,0 +1,89 @@
+<mvc:View
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:ux="sap.uxap"
+	xmlns:layout="sap.ui.layout"
+	xmlns:goals="sap.uxap.sample.SharedBlocks.goals"
+	xmlns:personal="sap.uxap.sample.SharedBlocks.personal"
+	controllerName="ZZ_GEST_PETOFER.controller.Detalle" displayBlock="true" xmlns="sap.m">
+
+	<ux:ObjectPageLayout id="ObjectPageLayout" upperCaseAnchorBar="false">
+		<ux:headerTitle>
+			<ux:ObjectPageHeader id="headerForTest"
+				objectTitle="Long title that wraps and goes over more lines"
+				showTitleSelector="true"
+				titleSelectorPress="handleTitleSelectorPress"
+				showMarkers="true"
+				markFavorite="true"
+				markLocked="true"
+				markFlagged="true"
+				markLockedPress="handleMarkLockedPress"
+				objectSubtitle="Long subtitle that wraps and goes over more lines"
+				objectImageShape="Circle"
+				objectImageURI="./test-resources/sap/uxap/images/imageID_275314.png"
+				titleSelectorTooltip="Custom Tooltip">
+				<ux:actions>
+					<ux:ObjectPageHeaderActionButton icon="sap-icon://action" text="action" importance="Low" tooltip="action"/>
+					<ux:ObjectPageHeaderActionButton icon="sap-icon://action-settings" text="settings" importance="Low" tooltip="action-settings"/>
+					<ux:ObjectPageHeaderActionButton icon="sap-icon://edit" text="edit" importance="Medium" tooltip="edit"/>
+					<ux:ObjectPageHeaderActionButton icon="sap-icon://save" text="save" visible="false" tooltip="save"/>
+					<ux:ObjectPageHeaderActionButton icon="sap-icon://refresh" text="{buttons>/text}" tooltip="refresh"/>
+				</ux:actions>
+				
+			</ux:ObjectPageHeader>
+		</ux:headerTitle>
+		<ux:headerContent>
+			<layout:VerticalLayout>
+				<ObjectStatus title="User ID" text="12345678"/>
+				<ObjectStatus title="Functional Area" text="Developement"/>
+				<ObjectStatus title="Cost Center" text="PI DFA GD Programs and Product"/>
+				<ObjectStatus title="Email" text="email@address.com"/>
+			</layout:VerticalLayout>
+			
+			<ObjectStatus text="In Stock" state="Error"/>
+			<ObjectStatus title="Label" text="In Stock" state="Warning"/>
+			<ObjectNumber number="1000" unit="SOOK" emphasized="false" state="Success"/>
+		</ux:headerContent>
+		<ux:sections>
+			<ux:ObjectPageSection titleUppercase="false" title="2014 Goals Plan">
+				<ux:subSections>
+					<ux:ObjectPageSubSection titleUppercase="false">
+						<ux:blocks>
+							<ObjectNumber number="1000" unit="SOOK" emphasized="false" state="Success"/>
+						</ux:blocks>
+					</ux:ObjectPageSubSection>
+				</ux:subSections>
+			</ux:ObjectPageSection>
+			<ux:ObjectPageSection titleUppercase="false" title="2014 Goals Plan">
+				<ux:subSections>
+					<ux:ObjectPageSubSection titleUppercase="false">
+						<ux:blocks>
+							<ObjectNumber number="1000" unit="SOOK" emphasized="false" state="Success"/>
+						</ux:blocks>
+					</ux:ObjectPageSubSection>
+				</ux:subSections>
+			</ux:ObjectPageSection>
+			<!--<ux:ObjectPageSection titleUppercase="false" title="Personal">-->
+			<!--	<ux:subSections>-->
+			<!--		<ux:ObjectPageSubSection title="Connect" titleUppercase="false">-->
+			<!--			<ux:blocks>-->
+			<!--				<personal:BlockPhoneNumber id="phone"/>-->
+			<!--				<personal:BlockSocial id="social"/>-->
+			<!--				<personal:BlockAdresses id="adresses"/>-->
+			<!--				<personal:BlockMailing id="mailing" columnLayout="1"/>-->
+			<!--			</blocks>-->
+			<!--		</ux:ObjectPageSubSection>-->
+
+			<!--		<ux:ObjectPageSubSection id="paymentSubSection" title="Payment information" titleUppercase="false">-->
+			<!--			<ux:blocks>-->
+			<!--				<personal:PersonalBlockPart1 id="part1" columnLayout="1"/>-->
+			<!--			</ux:blocks>-->
+			<!--			<ux:moreBlocks>-->
+			<!--				<personal:PersonalBlockPart2 id="part2" columnLayout="1"/>-->
+			<!--			</ux:moreBlocks>-->
+			<!--		</ux:ObjectPageSubSection>-->
+			<!--	</ux:subSections>-->
+			<!--</ux:ObjectPageSection>-->
+
+		</ux:sections>
+	</ux:ObjectPageLayout>
+</mvc:View>
