@@ -23,7 +23,7 @@ sap.ui.define([
 			});
 		},
 		onItemPress: function(){
-			this.getRouter().navTo("detalle");
+			this.getRouter().navTo("Detail");
 		}
 	});
 });

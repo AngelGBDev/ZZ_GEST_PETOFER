@@ -71,6 +71,10 @@
 					"bundleName": "ZZ_GEST_PETOFER.i18n.i18n"
 				}
 			},
+			"JSON_MDL": {
+				"type": "sap.ui.model.json.JSONModel",
+				"preload": true
+			},
 			"": {
 				"preload": true,
 				"dataSource": "mainService",
@@ -98,29 +102,29 @@
 			"routes": [
 				{
 					"pattern": "",
-					"name": "home",
+					"name": "Home",
 					"target": [
-						"home"
+						"Home"
 					]
 				},
 				{
-					"pattern": "detalle",
-					"name": "detalle",
+					"pattern": "Detail",
+					"name": "Detail",
 					"target": [
-						"detalle"
+						"Detail"
 					]
 				}
 			],
 			"targets": {
-				"home": {  
+				"Home": {  
 					"viewName": "Home",
-					"viewId": "home",
+					"viewId": "Home",
 					"viewLevel": 1,
 					"title": "{i18n>worklistViewTitle}"
 				},
-				"detalle": {
-					"viewName": "Detalle",
-					"viewId": "detalle",
+				"Detail": {
+					"viewName": "Detail",
+					"viewId": "Detail",
 					"viewLevel": 2,
 					"title": "{i18n>objectViewTitle}"
 				}
