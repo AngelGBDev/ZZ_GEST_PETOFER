@@ -1,10 +1,11 @@
 <mvc:View
 	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m"
 	xmlns:ux="sap.uxap"
 	xmlns:layout="sap.ui.layout"
-	xmlns:goals="sap.uxap.sample.SharedBlocks.goals"
-	xmlns:personal="sap.uxap.sample.SharedBlocks.personal"
-	controllerName="ZZ_GEST_PETOFER.controller.Detail" displayBlock="true" xmlns="sap.m">
+	xmlns:f="sap.ui.layout.form"
+	xmlns:smartField="sap.ui.comp.smartfield" 
+	controllerName="ZZ_GEST_PETOFER.controller.Detail" displayBlock="true">
 
 	<ux:ObjectPageLayout id="ObjectPageLayout" upperCaseAnchorBar="false">
 		<ux:headerTitle>
@@ -12,69 +13,230 @@
 				objectTitle="{JSON_MDL>/HEAD/Title}"
 				objectSubtitle="{JSON_MDL>/HEAD/Number}"
 				objectImageURI="./test-resources/sap/uxap/images/imageID_275314.png">
-				<ux:actions>
-					<ux:ObjectPageHeaderActionButton icon="sap-icon://action" text="action" importance="Low" tooltip="action"/>
-					<ux:ObjectPageHeaderActionButton icon="sap-icon://action-settings" text="settings" importance="Low" tooltip="action-settings"/>
-					<ux:ObjectPageHeaderActionButton icon="sap-icon://edit" text="edit" importance="Medium" tooltip="edit"/>
-					<ux:ObjectPageHeaderActionButton icon="sap-icon://save" text="save" visible="false" tooltip="save"/>
-					<ux:ObjectPageHeaderActionButton icon="sap-icon://refresh" text="{buttons>/text}" tooltip="refresh"/>
-				</ux:actions>
 				
+				<ux:actions>
+					<Button text="{i18n>ObjectPageHeaderActionButtonCO}"/>
+					<Button text="{i18n>ObjectPageHeaderActionButtonCA}"/>
+					<Button text="{i18n>ObjectPageHeaderActionButtonCP}"/>
+					<Button text="{i18n>ObjectPageHeaderActionButtonHI}"/>
+					<OverflowToolbarButton icon="sap-icon://action" type="Transparent"/>
+					<Button text="{i18n>ObjectPageHeaderActionButtonAR}"/>
+				</ux:actions>
 			</ux:ObjectPageHeader>
 		</ux:headerTitle>
 		<ux:headerContent>
 			<layout:VerticalLayout>
-				<ObjectStatus title="User ID" text="{JSON_MDL>/HEAD/Autor}"/>
-				<ObjectStatus title="Functional Area" text="{JSON_MDL>/HEAD/Creado}"/>
-				<ObjectStatus title="Cost Center" text="{JSON_MDL>/HEAD/Fecha}"/>
-				<ObjectStatus title="Email" text="{JSON_MDL>/HEAD/Autorizador}"/>
+				<ObjectStatus title="{i18n>PageDetailHeaderNA}" text="{JSON_MDL>/HEAD/Autor}"/>
+				<ObjectStatus title="{i18n>PageDetailHeaderCR}" text="{JSON_MDL>/HEAD/Creado}"/>
+				<ObjectStatus title="{i18n>PageDetailHeaderFP}" text="{JSON_MDL>/HEAD/Fecha}"/>
+				<ObjectStatus title="{i18n>PageDetailHeaderAU}" text="{JSON_MDL>/HEAD/Autorizador}"/>
 			</layout:VerticalLayout>
 			
-			<ObjectStatus text="In Stock" state="Error"/>
-			<ObjectStatus title="Label" text="In Stock" state="Warning"/>
-			<ObjectNumber number="1000" unit="SOOK" emphasized="false" state="Success"/>
+			<layout:VerticalLayout>
+				<Label text="{i18n>PageDetailHeaderST}"/>
+				<ObjectStatus text="{JSON_MDL>/HEAD/Status}" class="sapMObjectStatusLarge"/>
+			</layout:VerticalLayout>
+			<layout:VerticalLayout>
+				<Label text="{i18n>PageDetailHeaderVP}"/>
+				<ObjectStatus text="{JSON_MDL>/HEAD/ValorPrevisto} {JSON_MDL>/HEAD/Moneda}" class="sapMObjectStatusLarge"/>
+			</layout:VerticalLayout>	
+			<layout:VerticalLayout>
+				<Label text="{i18n>PageDetailHeaderPP}"/>
+				<ObjectStatus text="{JSON_MDL>/HEAD/Plazo}" class="sapMObjectStatusLarge"/>
+			</layout:VerticalLayout>
 		</ux:headerContent>
 		<ux:sections>
-			<ux:ObjectPageSection titleUppercase="false" title="2014 Goals Plan">
+			<ux:ObjectPageSection titleUppercase="false" title="{i18n>ObjectPageSectionIG}">
 				<ux:subSections>
 					<ux:ObjectPageSubSection titleUppercase="false">
 						<ux:blocks>
-							<ObjectNumber number="1000" unit="SOOK" emphasized="false" state="Success"/>
+							<f:Form editable="false">
+							<!--<f:title>-->
+							<!--	<core:Title text="{}" />-->
+							<!--</f:title>-->
+							<f:layout>
+								<f:ResponsiveGridLayout labelSpanXL="5" labelSpanL="5" labelSpanM="3" labelSpanS="12"
+									adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4"
+									emptySpanS="0" columnsXL="4" columnsL="4" columnsM="1" singleContainerFullSize="false" />
+							</f:layout>
+							<f:formContainers>
+								<f:FormContainer title="{i18n>ObjectPageSectionFormDB}">
+									<f:formElements>
+										<f:FormElement label="{i18n>FormElementLabelCL}">
+											<f:fields>
+												<Text text="{}"/>
+											</f:fields>
+										</f:FormElement>
+										<f:FormElement label="{i18n>FormElementLabelDE}">
+											<f:fields>
+												<Text text="{}"/>
+											</f:fields>
+										</f:FormElement>
+										<f:FormElement label="{i18n>FormElementLabelNR}">
+											<f:fields>
+												<Text text="{}"/>
+											</f:fields>
+										</f:FormElement>
+										<f:FormElement label="{i18n>FormElementLabelCI}">
+											<f:fields>
+												<Text text="{}" id="countryText" />
+											</f:fields>
+										</f:FormElement>
+									</f:formElements>
+								</f:FormContainer>
+								<f:FormContainer title="{i18n>ObjectPageSectionFormFE}">
+									<f:formElements>
+										<f:FormElement label="{i18n>FormElementLabelPL}">
+											<f:fields>
+												<Text text="{}"/>
+											</f:fields>
+										</f:FormElement>
+										<f:FormElement label="{i18n>FormElementLabelPO}">
+											<f:fields>
+												<Text text="{}"/>
+											</f:fields>
+										</f:FormElement>
+										<f:FormElement label="{i18n>FormElementLabelPV}">
+											<f:fields>
+												<Text text="{}"/>
+											</f:fields>
+										</f:FormElement>
+									</f:formElements>
+								</f:FormContainer>
+								<f:FormContainer title="{i18n>ObjectPageSectionFormOR}">
+									<f:formElements>
+										<f:FormElement label="{i18n>FormElementLabelGC}">
+											<f:fields>
+												<Text text="{}"/>
+											</f:fields>
+										</f:FormElement>
+										<f:FormElement label="{i18n>FormElementLabelOC}">
+											<f:fields>
+												<Text text="{}"/>
+											</f:fields>
+										</f:FormElement>
+										<f:FormElement label="{i18n>FormElementLabelCD}">
+											<f:fields>
+												<Text text="{}"/>
+											</f:fields>
+										</f:FormElement>
+									</f:formElements>
+								</f:FormContainer>
+								<f:FormContainer title="{i18n>ObjectPageSectionFormDS}">
+									<f:formElements>
+										<f:FormElement label="{i18n>FormElementLabelCD}">
+											<f:fields>
+												<Text text="{}"/>
+											</f:fields>
+										</f:FormElement>
+									</f:formElements>
+								</f:FormContainer>
+							</f:formContainers>
+						</f:Form>
 						</ux:blocks>
 					</ux:ObjectPageSubSection>
 				</ux:subSections>
 			</ux:ObjectPageSection>
-			<ux:ObjectPageSection titleUppercase="false" title="2014 Goals Plan">
+			
+			<ux:ObjectPageSection titleUppercase="false" title="{i18n>ObjectPageSectionCP}">
 				<ux:subSections>
 					<ux:ObjectPageSubSection titleUppercase="false">
 						<ux:blocks>
-							<ObjectNumber number="1000" unit="SOOK" emphasized="false" state="Success"/>
+							<ObjectStatus title="" text=""/>
 						</ux:blocks>
 					</ux:ObjectPageSubSection>
 				</ux:subSections>
 			</ux:ObjectPageSection>
-			<!--<ux:ObjectPageSection titleUppercase="false" title="Personal">-->
-			<!--	<ux:subSections>-->
-			<!--		<ux:ObjectPageSubSection title="Connect" titleUppercase="false">-->
-			<!--			<ux:blocks>-->
-			<!--				<personal:BlockPhoneNumber id="phone"/>-->
-			<!--				<personal:BlockSocial id="social"/>-->
-			<!--				<personal:BlockAdresses id="adresses"/>-->
-			<!--				<personal:BlockMailing id="mailing" columnLayout="1"/>-->
-			<!--			</blocks>-->
-			<!--		</ux:ObjectPageSubSection>-->
-
-			<!--		<ux:ObjectPageSubSection id="paymentSubSection" title="Payment information" titleUppercase="false">-->
-			<!--			<ux:blocks>-->
-			<!--				<personal:PersonalBlockPart1 id="part1" columnLayout="1"/>-->
-			<!--			</ux:blocks>-->
-			<!--			<ux:moreBlocks>-->
-			<!--				<personal:PersonalBlockPart2 id="part2" columnLayout="1"/>-->
-			<!--			</ux:moreBlocks>-->
-			<!--		</ux:ObjectPageSubSection>-->
-			<!--	</ux:subSections>-->
-			<!--</ux:ObjectPageSection>-->
-
+			
+			<ux:ObjectPageSection titleUppercase="false" title="{i18n>ObjectPageSectionAR}">
+				<ux:subSections>
+					<ux:ObjectPageSubSection title="" titleUppercase="false">
+						<ux:blocks>
+							<ObjectStatus title="" text=""/>
+						</ux:blocks>
+					</ux:ObjectPageSubSection>
+				</ux:subSections>
+			</ux:ObjectPageSection>
+			
+			<ux:ObjectPageSection titleUppercase="false" title="{i18n>ObjectPageSectionOF}">
+				<ux:subSections>
+					<ux:ObjectPageSubSection title="" titleUppercase="false">
+						<ux:blocks>
+							<ObjectStatus title="" text=""/>
+						</ux:blocks>
+					</ux:ObjectPageSubSection>
+				</ux:subSections>
+			</ux:ObjectPageSection>
+			
+			<ux:ObjectPageSection titleUppercase="false" title="{i18n>ObjectPageSectionDS}">
+				<ux:subSections>
+					<ux:ObjectPageSubSection title="" titleUppercase="false">
+						<ux:blocks>
+							<ObjectStatus title="" text=""/>
+						</ux:blocks>
+					</ux:ObjectPageSubSection>
+				</ux:subSections>
+			</ux:ObjectPageSection>
+			
+			<ux:ObjectPageSection titleUppercase="false" title="{i18n>ObjectPageSectionOR}">
+				<ux:subSections>
+					<ux:ObjectPageSubSection title="" titleUppercase="false">
+						<ux:blocks>
+							<ObjectStatus title="" text=""/>
+						</ux:blocks>
+					</ux:ObjectPageSubSection>
+				</ux:subSections>
+			</ux:ObjectPageSection>
+			
+			<ux:ObjectPageSection titleUppercase="false" title="{i18n>ObjectPageSectionTL}">
+				<ux:subSections>
+					<ux:ObjectPageSubSection title="" titleUppercase="false">
+						<ux:blocks>
+							<ObjectStatus title="" text=""/>
+						</ux:blocks>
+					</ux:ObjectPageSubSection>
+				</ux:subSections>
+			</ux:ObjectPageSection>
+			
+			<ux:ObjectPageSection titleUppercase="false" title="{i18n>ObjectPageSectionFP}">
+				<ux:subSections>
+					<ux:ObjectPageSubSection title="" titleUppercase="false">
+						<ux:blocks>
+							<ObjectStatus title="" text=""/>
+						</ux:blocks>
+					</ux:ObjectPageSubSection>
+				</ux:subSections>
+			</ux:ObjectPageSection>
+			
+			<ux:ObjectPageSection titleUppercase="false" title="{i18n>ObjectPageSectionNO}">
+				<ux:subSections>
+					<ux:ObjectPageSubSection title="" titleUppercase="false">
+						<ux:blocks>
+							<ObjectStatus title="" text=""/>
+						</ux:blocks>
+					</ux:ObjectPageSubSection>
+				</ux:subSections>
+			</ux:ObjectPageSection>
+			
+			<ux:ObjectPageSection titleUppercase="false" title="{i18n>ObjectPageSectionAA}">
+				<ux:subSections>
+					<ux:ObjectPageSubSection title="" titleUppercase="false">
+						<ux:blocks>
+							<ObjectStatus title="" text=""/>
+						</ux:blocks>
+					</ux:ObjectPageSubSection>
+				</ux:subSections>
+			</ux:ObjectPageSection>
+			
+			<ux:ObjectPageSection titleUppercase="false" title="{i18n>ObjectPageSectionDA}">
+				<ux:subSections>
+					<ux:ObjectPageSubSection title="" titleUppercase="false">
+						<ux:blocks>
+							<ObjectStatus title="" text=""/>
+						</ux:blocks>
+					</ux:ObjectPageSubSection>
+				</ux:subSections>
+			</ux:ObjectPageSection>
 		</ux:sections>
 	</ux:ObjectPageLayout>
 </mvc:View>
