@@ -8,7 +8,7 @@
 	controllerName="ZZ_GEST_PETOFER.controller.Detail" displayBlock="true">
 
 	<!-- TEST -->
-	<!-- TEST -->
+	<!-- TEST FEATURE 1-->
 	<!-- TEST -->
 
 	<ux:ObjectPageLayout id="ObjectPageLayout" upperCaseAnchorBar="false">
