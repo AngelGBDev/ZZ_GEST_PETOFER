@@ -1,35 +1,33 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
-
-	<head>
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta charset="UTF-8">
-
-		<title>ZZ_GEST_PETOFER</title>
-
-		<script id="sap-ui-bootstrap"
-			src="https://sapui5.hana.ondemand.com/1.89.0/resources/sap-ui-core.js"
-			data-sap-ui-libs="sap.m"
-			data-sap-ui-theme="sap_belize"
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title></title>
+	<style>
+		html, body, body > div, #container, #container-uiarea {
+			height: 100%;
+		}
+	</style>
+	<script
+			id="sap-ui-bootstrap"
+			src="resources/sap-ui-core.js"
+			data-sap-ui-theme="sap_fiori_3"
+			data-sap-ui-resourceroots='{
+            "ZZ_GEST_PETOFER": "."
+        }'
 			data-sap-ui-compatVersion="edge"
-			data-sap-ui-resourceroots='{"ZZ_GEST_PETOFER": ""}'>
-		</script>
-
-		<link rel="stylesheet" type="text/css" href="css/style.css">
-
-		<script>
-			sap.ui.getCore().attachInit(function() {
-				new sap.m.Shell({
-					app: new sap.ui.core.ComponentContainer({
-						height : "100%",
-						name : "ZZ_GEST_PETOFER"
-					})
-				}).placeAt("content");
-			});
-		</script>
-	</head>
-
-	<body class="sapUiBody" id="content">
-	</body>
-
+			data-sap-ui-async="true"
+			data-sap-ui-preload="async"
+			data-sap-ui-libs="sap.m">
+	</script>
+	<script id="locate-reuse-libs" src="./utils/locate-reuse-libs.js"
+			data-sap-ui-manifest-uri="./manifest.json"
+			data-sap-ui-componentName="ZZ_GEST_PETOFER">
+	</script>
+</head>
+<body class="sapUiBody sapUiSizeCompact" id="content">
+<div data-sap-ui-component data-name="ZZ_GEST_PETOFER" data-id="container" data-settings='{"id" : "ZZ_GEST_PETOFER"}' data-handle-validation="true"></div>
+</body>
 </html>
